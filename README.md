@@ -1,20 +1,26 @@
-<<<<<<< HEAD
-# React + Vite
+# Weather AI Dashboard 🌤️🤖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, high-performance Weather Dashboard built with React and Vite. This application provides real-time weather analytics alongside AI-driven insights to help users interpret complex meteorological data effortlessly.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Real-time Analytics:** Instant updates on temperature, humidity, wind speeds, and pressure.
+* **AI-Powered Insights:** Smart summaries that interpret weather conditions and provide context-specific recommendations.
+* **Modern Bundling:** Powered by Vite for near-instantaneous hot module replacement (HMR) and optimized production builds.
+* **Responsive Architecture:** Fully optimized for seamless display across mobile, tablet, and desktop viewports.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React (Hooks, Context/State Management)
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS / CSS Modules
+* **Version Control & Deployment:** Git, GitHub Actions, GitHub Pages
 
-## Expanding the ESLint configuration
+## 📦 Local Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# weather-app
->>>>>>> 68d993b9bcee59638d403f36674a302adc864dcc
+Follow these steps to set up the project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/abinashshubham/weather-app.git](https://github.com/abinashshubham/weather-app.git)
+   cd weather-ai-dashboard
