@@ -1,0 +1,232 @@
+.weatherCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Master styling for both photo panels */
+.locationCard, .conditionCard {
+  height: 280px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  /* Premium double-layered border for realistic light refraction */
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.locationCard:hover, .conditionCard:hover {
+  transform: translateY(-4px);
+}
+
+/* Cinematic Atmospheric Overlay Overlay */
+.cardOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg, 
+    rgba(16, 16, 20, 0.1) 0%, 
+    rgba(16, 16, 20, 0.4) 50%, 
+    rgba(16, 16, 20, 0.85) 100%
+  );
+}
+
+/* Dynamic Atmospheric Filter adjustments based on weather theme */
+[data-theme="Rain"] .cardOverlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%);
+  mix-blend-mode: multiply;
+}
+
+[data-theme="Clear"] .cardOverlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.cardContent, .conditionContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+.conditionContent {
+  align-items: center;
+  justify-content: center;
+}
+
+.topRow {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Sleek Capsule Badges */
+.dateTimeBadge {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.dateTag {
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffeaa7;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.timeTag {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cityName {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.countryName {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.statusDescription {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  opacity: 0.95;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Hyper-Realistic Big Degree typography */
+.bigDegree {
+  font-size: 5.5rem;
+  font-weight: 200;
+  letter-spacing: -3px;
+  color: #ffffff;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  font-feature-settings: "tnum"; /* Prevents layout shifting when time/temp updates */
+}
+
+/* High-Fidelity Sub-Metrics Grid Glassmorphism */
+.metricBlock {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metricBlock:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  opacity: 0.45;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metricValue {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.forecastChartBlock {
+  grid-column: span 2; /* Forces the line chart to span across both grid columns horizontally */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.canvasContainer {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.svgCanvas {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chartTempText {
+  fill: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chartDayText {
+  fill: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .forecastChartBlock {
+    grid-column: span 1; /* Drop back to single width structural profile on mobile grids */
+  }
+}
+
+/* RESPONSIVE LAYOUT OPTIMIZATIONS */
+@media (max-width: 680px) {
+  .weatherCardGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .locationCard, .conditionCard {
+    height: 240px;
+  }
+  .cityName {
+    font-size: 2rem;
+  }
+  .bigDegree {
+    font-size: 4.5rem;
+  }
+}

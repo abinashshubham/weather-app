@@ -1,0 +1,40 @@
+:root {
+  --font-main: 'Segoe UI', Roboto, sans-serif;
+  --transition-speed: 0.5s;
+  
+  /* Default Clear/Sunny Theme Colors */
+  --bg-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --text-color: #ffffff;
+  --accent-color: #ffeaa7;
+}
+
+/* Rain/Storm Dynamic Theme override */
+[data-theme="Rain"], [data-theme="Drizzle"], [data-theme="Thunderstorm"] {
+  --bg-gradient: linear-gradient(135deg, #2d3436, #0f172a);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text-color: #f1f5f9;
+  --accent-color: #a5f3fc;
+}
+
+/* Snow Dynamic Theme override */
+[data-theme="Snow"] {
+  --bg-gradient: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --text-color: #1e293b;
+  --accent-color: #3b82f6;
+}
+
+/* Clouds/Mist Dynamic Theme override */
+[data-theme="Clouds"], [data-theme="Mist"], [data-theme="Haze"] {
+  --bg-gradient: linear-gradient(135deg, #636e72, #b2bec3);
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --text-color: #ffffff;
+  --accent-color: #dfe6e9;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}

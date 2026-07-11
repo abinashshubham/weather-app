@@ -1,0 +1,96 @@
+.aiContainer {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  color: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.textDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.headerBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aiTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.aiSparkle {
+  color: var(--accent-color, #ffeaa7);
+  font-size: 1.3rem;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.subtext {
+  font-size: 0.8rem;
+  opacity: 0.4;
+  margin: 4px 0 24px 0;
+}
+
+.insightBox {
+  margin-bottom: 20px;
+}
+
+.boxTitle {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color, #ffeaa7);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.boxContent {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+.apparelImageCard {
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
+  min-height: 220px;
+}
+
+.imgGradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, transparent 100%);
+}
+
+/* Keyframes for the smart ambient icon animation */
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 4px var(--accent-color, #ffeaa7)); }
+}
+
+/* Responsive Scaling Viewport Rules */
+@media (max-width: 640px) {
+  .aiContainer {
+    grid-template-columns: 1fr; /* Stacks layout on mobile layouts */
+  }
+  .apparelImageCard {
+    min-height: 180px;
+  }
+}
